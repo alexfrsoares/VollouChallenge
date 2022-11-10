@@ -11,7 +11,7 @@ import SwiftUI
 struct Vollou_ChallengeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            UserListView()
         }
     }
 }
