@@ -8,11 +8,12 @@
 import Foundation
 
 class UserListViewModel: ObservableObject {
+    @Published var userList = [User]()
+    let dispatchGroup = DispatchGroup()
+
     init() {
         fetchUsers()
     }
-
-    @Published var userList = [User]()
 
     private func fetchUsers() {
         WebService().getUsers { result in
@@ -20,7 +21,9 @@ class UserListViewModel: ObservableObject {
             case .failure(let error):
                 print(error)
             case .success(let userList):
-                self.userList = userList
+                self.dispatchGroup.notify(queue: .main) {
+                    self.userList = userList
+                }
             }
         }
     }

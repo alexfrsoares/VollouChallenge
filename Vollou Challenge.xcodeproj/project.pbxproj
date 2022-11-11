@@ -10,7 +10,7 @@
 		920FB3D8291C88B700147CA7 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FB3D7291C88B700147CA7 /* WebService.swift */; };
 		920FB3DA291C891200147CA7 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FB3D9291C891200147CA7 /* UserListViewModel.swift */; };
 		920FB3DC291C894300147CA7 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FB3DB291C894300147CA7 /* UserDetailView.swift */; };
-		920FB3DE291C895300147CA7 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FB3DD291C895300147CA7 /* UserDetailViewModel.swift */; };
+		920FB3DE291C895300147CA7 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FB3DD291C895300147CA7 /* UserViewModel.swift */; };
 		920FB3E0291DAAEC00147CA7 /* UserListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FB3DF291DAAEC00147CA7 /* UserListItemView.swift */; };
 		920FB3E2291DADD700147CA7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FB3E1291DADD700147CA7 /* User.swift */; };
 		920FB3E5291DAE5500147CA7 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FB3E4291DAE5500147CA7 /* Address.swift */; };
@@ -18,6 +18,7 @@
 		920FB3E9291DAF0B00147CA7 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FB3E8291DAF0B00147CA7 /* Company.swift */; };
 		920FB3EB291DAFB600147CA7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FB3EA291DAFB600147CA7 /* Post.swift */; };
 		920FB3ED291DB01F00147CA7 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FB3EC291DB01F00147CA7 /* Comment.swift */; };
+		920FB3F1291E1B2800147CA7 /* PostInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FB3F0291E1B2800147CA7 /* PostInfo.swift */; };
 		92C6D82A291C7DB600955636 /* Vollou_ChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6D829291C7DB600955636 /* Vollou_ChallengeApp.swift */; };
 		92C6D82C291C7DB600955636 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6D82B291C7DB600955636 /* UserListView.swift */; };
 		92C6D82E291C7DB700955636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92C6D82D291C7DB700955636 /* Assets.xcassets */; };
@@ -28,7 +29,7 @@
 		920FB3D7291C88B700147CA7 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		920FB3D9291C891200147CA7 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		920FB3DB291C894300147CA7 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
-		920FB3DD291C895300147CA7 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		920FB3DD291C895300147CA7 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		920FB3DF291DAAEC00147CA7 /* UserListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListItemView.swift; sourceTree = "<group>"; };
 		920FB3E1291DADD700147CA7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		920FB3E4291DAE5500147CA7 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
@@ -36,6 +37,7 @@
 		920FB3E8291DAF0B00147CA7 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		920FB3EA291DAFB600147CA7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		920FB3EC291DB01F00147CA7 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		920FB3F0291E1B2800147CA7 /* PostInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInfo.swift; sourceTree = "<group>"; };
 		92C6D826291C7DB600955636 /* Vollou Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vollou Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C6D829291C7DB600955636 /* Vollou_ChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vollou_ChallengeApp.swift; sourceTree = "<group>"; };
 		92C6D82B291C7DB600955636 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
@@ -54,7 +56,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		920FB3E3291DADDD00147CA7 /* Model */ = {
+		920FB3E3291DADDD00147CA7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				920FB3E1291DADD700147CA7 /* User.swift */,
@@ -63,8 +65,28 @@
 				920FB3E8291DAF0B00147CA7 /* Company.swift */,
 				920FB3EA291DAFB600147CA7 /* Post.swift */,
 				920FB3EC291DB01F00147CA7 /* Comment.swift */,
+				920FB3F0291E1B2800147CA7 /* PostInfo.swift */,
 			);
-			path = Model;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		920FB3F2291E20B800147CA7 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				92C6D82B291C7DB600955636 /* UserListView.swift */,
+				920FB3DF291DAAEC00147CA7 /* UserListItemView.swift */,
+				920FB3D9291C891200147CA7 /* UserListViewModel.swift */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		920FB3F3291E20BF00147CA7 /* UserDetails */ = {
+			isa = PBXGroup;
+			children = (
+				920FB3DB291C894300147CA7 /* UserDetailView.swift */,
+				920FB3DD291C895300147CA7 /* UserViewModel.swift */,
+			);
+			path = UserDetails;
 			sourceTree = "<group>";
 		};
 		92C6D81D291C7DB600955636 = {
@@ -88,12 +110,9 @@
 			children = (
 				92C6D829291C7DB600955636 /* Vollou_ChallengeApp.swift */,
 				920FB3D7291C88B700147CA7 /* WebService.swift */,
-				920FB3E3291DADDD00147CA7 /* Model */,
-				92C6D82B291C7DB600955636 /* UserListView.swift */,
-				920FB3D9291C891200147CA7 /* UserListViewModel.swift */,
-				920FB3DF291DAAEC00147CA7 /* UserListItemView.swift */,
-				920FB3DB291C894300147CA7 /* UserDetailView.swift */,
-				920FB3DD291C895300147CA7 /* UserDetailViewModel.swift */,
+				920FB3E3291DADDD00147CA7 /* Models */,
+				920FB3F2291E20B800147CA7 /* UserList */,
+				920FB3F3291E20BF00147CA7 /* UserDetails */,
 				92C6D82D291C7DB700955636 /* Assets.xcassets */,
 				92C6D82F291C7DB700955636 /* Preview Content */,
 			);
@@ -179,7 +198,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				920FB3E5291DAE5500147CA7 /* Address.swift in Sources */,
-				920FB3DE291C895300147CA7 /* UserDetailViewModel.swift in Sources */,
+				920FB3F1291E1B2800147CA7 /* PostInfo.swift in Sources */,
+				920FB3DE291C895300147CA7 /* UserViewModel.swift in Sources */,
 				920FB3E0291DAAEC00147CA7 /* UserListItemView.swift in Sources */,
 				920FB3EB291DAFB600147CA7 /* Post.swift in Sources */,
 				92C6D82C291C7DB600955636 /* UserListView.swift in Sources */,

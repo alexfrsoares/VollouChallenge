@@ -5,14 +5,6 @@
 //  Created by Alex Freitas on 10/11/2022.
 //
 
-/*
- 1. Use the following API endpoints;
- 2. Users - http://jsonplaceholder.typicode.com/users
- Posts - http://jsonplaceholder.typicode.com/posts
- Comments - http://jsonplaceholder.typicode.com/comments
- User Icon Images - avatars.adorable.io https://avatars.dicebear.com/api/croodles/
- */
-
 import Foundation
 
 enum NetworkError: Error {
@@ -45,6 +37,44 @@ class WebService {
                     let decoder = JSONDecoder()
                     let userList = try decoder.decode([User].self, from: data)
                     completion(.success(userList))
+                } catch {
+                    completion(.failure(.decodingError))
+                }
+            }
+        }.resume()
+    }
+
+    func getPosts(completion: @escaping (Result<[Post], NetworkError>) -> Void) {
+        let postsURL = "/posts"
+        defaultSession.dataTask(with: requestConfiguration(for: postsURL)) { data, response, error in
+            if error != nil {
+                completion(.failure(.unexpectedError))
+            } else if let data = data,
+                      let response = response as? HTTPURLResponse,
+                      response.statusCode == 200 {
+                do {
+                    let decoder = JSONDecoder()
+                    let posts = try decoder.decode([Post].self, from: data)
+                    completion(.success(posts))
+                } catch {
+                    completion(.failure(.decodingError))
+                }
+            }
+        }.resume()
+    }
+
+    func getComments(completion: @escaping (Result<[Comment], NetworkError>) -> Void) {
+        let postsURL = "/comments"
+        defaultSession.dataTask(with: requestConfiguration(for: postsURL)) { data, response, error in
+            if error != nil {
+                completion(.failure(.unexpectedError))
+            } else if let data = data,
+                      let response = response as? HTTPURLResponse,
+                      response.statusCode == 200 {
+                do {
+                    let decoder = JSONDecoder()
+                    let comments = try decoder.decode([Comment].self, from: data)
+                    completion(.success(comments))
                 } catch {
                     completion(.failure(.decodingError))
                 }
