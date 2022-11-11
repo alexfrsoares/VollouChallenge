@@ -12,31 +12,27 @@ struct UserDetailView: View {
 
     var body: some View {
         VStack {
-            AsyncImage(url: viewModel.imageURL) { image in
-                image.resizable()
-            } placeholder: {
-                Color.red
-            }
-            .frame(width: 60, height: 60)
-            .clipShape(RoundedRectangle(cornerRadius: 4))
-            Text(viewModel.name)
-            Text(viewModel.email)
-            Text(viewModel.address)
-            Text(viewModel.phone)
-            Text(viewModel.website)
-            Text(viewModel.company)
-        }
-        .navigationBarTitle(Text(viewModel.name), displayMode: .inline)
+            List {
+                Section(header: UserImageView(imageURL: viewModel.imageURL).frame(width: 200, height: 200)) {
+                    Text("Name: \(viewModel.name)")
+                    Text("E-mail: \(viewModel.email)")
+                    Text("Address: \n\(viewModel.address)")
+                    Text("Phone: \(viewModel.phone)")
+                    Text("Site: \(viewModel.website)")
+                    Text("Company: \n\(viewModel.company)")
+                }
 
-        VStack {
-            Text("post list")
-            ForEach(viewModel.postInfo) { post in
-                HStack {
-                    Text(post.title)
-                    Spacer()
-                    Text("\(post.comments.count) comments")
+                Section(header: Text("User's Posts")) {
+                    ForEach(viewModel.postInfo) { post in
+                        HStack {
+                            Text(post.title)
+                            Spacer()
+                            Text("\(post.comments.count) comments")
+                        }
+                    }
                 }
             }
         }
+        .navigationBarTitle(Text(viewModel.name), displayMode: .inline)
     }
 }

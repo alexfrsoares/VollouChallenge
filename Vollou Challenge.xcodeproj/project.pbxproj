@@ -19,6 +19,7 @@
 		920FB3EB291DAFB600147CA7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FB3EA291DAFB600147CA7 /* Post.swift */; };
 		920FB3ED291DB01F00147CA7 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FB3EC291DB01F00147CA7 /* Comment.swift */; };
 		920FB3F1291E1B2800147CA7 /* PostInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FB3F0291E1B2800147CA7 /* PostInfo.swift */; };
+		920FB3F5291E22E800147CA7 /* UserImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FB3F4291E22E800147CA7 /* UserImageView.swift */; };
 		92C6D82A291C7DB600955636 /* Vollou_ChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6D829291C7DB600955636 /* Vollou_ChallengeApp.swift */; };
 		92C6D82C291C7DB600955636 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6D82B291C7DB600955636 /* UserListView.swift */; };
 		92C6D82E291C7DB700955636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92C6D82D291C7DB700955636 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		920FB3EA291DAFB600147CA7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		920FB3EC291DB01F00147CA7 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		920FB3F0291E1B2800147CA7 /* PostInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInfo.swift; sourceTree = "<group>"; };
+		920FB3F4291E22E800147CA7 /* UserImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageView.swift; sourceTree = "<group>"; };
 		92C6D826291C7DB600955636 /* Vollou Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vollou Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C6D829291C7DB600955636 /* Vollou_ChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vollou_ChallengeApp.swift; sourceTree = "<group>"; };
 		92C6D82B291C7DB600955636 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				920FB3DB291C894300147CA7 /* UserDetailView.swift */,
 				920FB3DD291C895300147CA7 /* UserViewModel.swift */,
+				920FB3F4291E22E800147CA7 /* UserImageView.swift */,
 			);
 			path = UserDetails;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				920FB3DA291C891200147CA7 /* UserListViewModel.swift in Sources */,
 				920FB3E2291DADD700147CA7 /* User.swift in Sources */,
 				920FB3E7291DAE9500147CA7 /* Geolocation.swift in Sources */,
+				920FB3F5291E22E800147CA7 /* UserImageView.swift in Sources */,
 				920FB3ED291DB01F00147CA7 /* Comment.swift in Sources */,
 				920FB3E9291DAF0B00147CA7 /* Company.swift in Sources */,
 				92C6D82A291C7DB600955636 /* Vollou_ChallengeApp.swift in Sources */,

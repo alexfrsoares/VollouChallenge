@@ -12,14 +12,11 @@ struct UserListItemView: View {
 
     var body: some View {
         HStack {
-            AsyncImage(url: viewModel.imageURL) { image in
-                image.resizable()
-            } placeholder: {
-                Color.red
-            }
-            .frame(width: 40, height: 40)
-            .clipShape(RoundedRectangle(cornerRadius: 4))
+            UserImageView(imageURL: viewModel.imageURL)
+                .frame(width: 40, height: 40)
+                .clipShape(RoundedRectangle(cornerRadius: 4))
             Text(viewModel.name)
         }
+        .frame(height: 50)
     }
 }

@@ -19,7 +19,6 @@ struct UserListView: View {
                     UserListItemView(viewModel: userViewModel)
                 })
             }
-            .padding()
         }
     }
 }
