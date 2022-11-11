@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Company {
+struct Company: Decodable {
     var name: String
     var catchPhrase: String
     var bs: String

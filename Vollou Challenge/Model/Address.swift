@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Address {
+struct Address: Decodable {
     var street: String
     var suite: String
     var city: String

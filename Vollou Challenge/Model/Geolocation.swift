@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Geolocation {
+struct Geolocation: Decodable {
     var lat: String
     var lng: String
 }

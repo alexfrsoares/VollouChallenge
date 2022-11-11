@@ -8,16 +8,22 @@
 import SwiftUI
 
 struct UserListItemView: View {
+    @State var imageName: String
+    @State var username: String
+
     var body: some View {
-        VStack {
-            Image("Circle")
-            Text("username")
+        HStack {
+            Image(imageName)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 100)
+            Text(username)
         }
     }
 }
 
 struct UserListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        UserListItemView()
+        UserListItemView(imageName: "Bret", username: "Bret")
     }
 }

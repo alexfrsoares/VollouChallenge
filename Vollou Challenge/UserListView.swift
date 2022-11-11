@@ -13,19 +13,23 @@
 import SwiftUI
 
 struct UserListView: View {
+    @ObservedObject var viewModel = UserListViewModel()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            List(viewModel.userList) { user in
+                NavigationLink(destination: UserDetailView(), label: {
+                    UserListItemView(imageName: user.name, username: user.name)
+                })
+            }
+            .padding()
+            .navigationBarTitle(Text("Users"), displayMode: .automatic)
         }
-        .padding()
     }
 }
 
-//struct UserListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        UserListView()
-//    }
-//}
+struct UserListView_Previews: PreviewProvider {
+    static var previews: some View {
+        UserListView()
+    }
+}

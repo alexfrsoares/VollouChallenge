@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User {
+struct User: Identifiable, Decodable {
     var id: Int
     var name: String
     var email: String
@@ -15,4 +15,8 @@ struct User {
     var phone: String
     var website: String
     var company: Company
+}
+
+struct UserList: Decodable {
+    var users: [User]
 }
