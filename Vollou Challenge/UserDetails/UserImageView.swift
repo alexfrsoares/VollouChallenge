@@ -24,9 +24,3 @@ struct UserImageView: View {
         }
     }
 }
-
-//struct UserImageView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        UserImageView(imageURL: <#URL#>)
-//    }
-//}
