@@ -12,10 +12,10 @@ class UserListViewModel: ObservableObject {
     let dispatchGroup = DispatchGroup()
 
     init() {
-        fetchUsers()
+        getUsers()
     }
 
-    private func fetchUsers() {
+    private func getUsers() {
         WebService().fetchData(category: .users) { result in
             switch result {
             case .failure(let error):

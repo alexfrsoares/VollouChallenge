@@ -9,12 +9,13 @@ import Foundation
 
 class UserViewModel {
     let user: User
-    private var allComments: [Comment] = []
     private var allPosts: [Post] = []
+    private var allComments: [Comment] = []
 
     init(user: User) {
         self.user = user
-        fetchData()
+        getPosts()
+        getComments()
     }
 
     var name: String {
@@ -63,22 +64,32 @@ class UserViewModel {
         return URL(string: baseURL + imageName + imageExtension)
     }
 
-    private func fetchData() {
-        WebService().getPosts { result in
+    private func getPosts() {
+        WebService().fetchData(category: .posts) { result in
             switch result {
             case .failure(let error):
                 print(error)
-            case .success(let posts):
-                self.allPosts = posts
+            case .success(let fetchedData):
+                if fetchedData is [Post] {
+                    self.allPosts = fetchedData.map { $0 as! Post }
+                } else {
+                    print("Error: fetched data is not Post type")
+                }
             }
         }
+    }
 
-        WebService().getComments { result in
+    private func getComments() {
+        WebService().fetchData(category: .comments) { result in
             switch result {
             case .failure(let error):
                 print(error)
-            case .success(let comments):
-                self.allComments = comments
+            case .success(let fetchedData):
+                if fetchedData is [Comment] {
+                    self.allComments = fetchedData.map { $0 as! Comment }
+                } else {
+                    print("Error: fetched data is not Comment type")
+                }
             }
         }
     }
