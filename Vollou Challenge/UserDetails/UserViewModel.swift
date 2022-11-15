@@ -96,12 +96,10 @@ class UserViewModel {
 
     var postInfo: [PostInfo] {
         var postInfo: [PostInfo] = []
-
         let userPosts = allPosts.filter({ $0.userId == self.user.id }).map({ return (id: $0.id, title: $0.title) })
 
         for post in userPosts {
             let comments = allComments.filter({ $0.postId == post.id }).map({ return $0.body })
-
             postInfo.append(PostInfo(title: post.title, comments: comments))
         }
 

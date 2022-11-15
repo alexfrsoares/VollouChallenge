@@ -33,44 +33,6 @@ class WebService {
         }
     }
 
-    func getPosts(completion: @escaping (Result<[Post], NetworkError>) -> Void) {
-        let postsURL = "/posts"
-        defaultSession.dataTask(with: requestConfiguration(for: postsURL)) { data, response, error in
-            if error != nil {
-                completion(.failure(.unexpectedError))
-            } else if let data = data,
-                      let response = response as? HTTPURLResponse,
-                      response.statusCode == 200 {
-                do {
-                    let decoder = JSONDecoder()
-                    let posts = try decoder.decode([Post].self, from: data)
-                    completion(.success(posts))
-                } catch {
-                    completion(.failure(.decodingError))
-                }
-            }
-        }.resume()
-    }
-
-    func getComments(completion: @escaping (Result<[Comment], NetworkError>) -> Void) {
-        let postsURL = "/comments"
-        defaultSession.dataTask(with: requestConfiguration(for: postsURL)) { data, response, error in
-            if error != nil {
-                completion(.failure(.unexpectedError))
-            } else if let data = data,
-                      let response = response as? HTTPURLResponse,
-                      response.statusCode == 200 {
-                do {
-                    let decoder = JSONDecoder()
-                    let comments = try decoder.decode([Comment].self, from: data)
-                    completion(.success(comments))
-                } catch {
-                    completion(.failure(.decodingError))
-                }
-            }
-        }.resume()
-    }
-
     func fetchData(category: ModelCategory, completion: @escaping (Result<[Any], NetworkError>) -> Void) {
         var complementaryURL = ""
         switch category {
