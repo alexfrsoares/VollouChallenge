@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User: Identifiable, Decodable {
+struct User: Identifiable, Decodable, ModelData {
     var id: Int
     var name: String
     var email: String
