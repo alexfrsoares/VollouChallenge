@@ -16,13 +16,17 @@ class UserListViewModel: ObservableObject {
     }
 
     private func fetchUsers() {
-        WebService().getUsers { result in
+        WebService().fetchData(category: .users) { result in
             switch result {
             case .failure(let error):
                 print(error)
-            case .success(let userList):
+            case .success(let fetchedData):
                 self.dispatchGroup.notify(queue: .main) {
-                    self.userList = userList
+                    if fetchedData is [User] {
+                        self.userList = fetchedData.map { $0 as! User }
+                    } else {
+                        print("Error: fetched data is not User type")
+                    }
                 }
             }
         }

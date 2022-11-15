@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Comment: Identifiable, Decodable {
+struct Comment: Identifiable, Decodable, ModelData {
     var postId: Int
     var id: Int
     var name: String

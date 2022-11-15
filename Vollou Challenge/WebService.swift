@@ -12,6 +12,14 @@ enum NetworkError: Error {
     case decodingError
 }
 
+enum ModelCategory {
+    case users
+    case posts
+    case comments
+}
+
+protocol ModelData { }
+
 class WebService {
     private let defaultSession = URLSession(configuration: .default)
 
@@ -23,25 +31,6 @@ class WebService {
         } else {
             return URLRequest(url: URL(string: "")!)
         }
-    }
-
-    func getUsers(completion: @escaping (Result<[User], NetworkError>) -> Void) {
-        let userListURL = "/users"
-        defaultSession.dataTask(with: requestConfiguration(for: userListURL)) { data, response, error in
-            if error != nil {
-                completion(.failure(.unexpectedError))
-            } else if let data = data,
-                      let response = response as? HTTPURLResponse,
-                      response.statusCode == 200 {
-                do {
-                    let decoder = JSONDecoder()
-                    let userList = try decoder.decode([User].self, from: data)
-                    completion(.success(userList))
-                } catch {
-                    completion(.failure(.decodingError))
-                }
-            }
-        }.resume()
     }
 
     func getPosts(completion: @escaping (Result<[Post], NetworkError>) -> Void) {
@@ -75,6 +64,44 @@ class WebService {
                     let decoder = JSONDecoder()
                     let comments = try decoder.decode([Comment].self, from: data)
                     completion(.success(comments))
+                } catch {
+                    completion(.failure(.decodingError))
+                }
+            }
+        }.resume()
+    }
+
+    func fetchData(category: ModelCategory, completion: @escaping (Result<[Any], NetworkError>) -> Void) {
+        var complementaryURL = ""
+        switch category {
+        case .users:
+            complementaryURL = "/users"
+        case .posts:
+            complementaryURL = "/posts"
+        case .comments:
+            complementaryURL = "/comments"
+        }
+
+        defaultSession.dataTask(with: requestConfiguration(for: complementaryURL)) { data, response, error in
+            if error != nil {
+                completion(.failure(.unexpectedError))
+            } else if let data = data,
+                      let response = response as? HTTPURLResponse,
+                      response.statusCode == 200 {
+                do {
+                    let decoder = JSONDecoder()
+
+                    var fetchedData: [ModelData] = []
+                    switch category {
+                    case .users:
+                        fetchedData = try decoder.decode([User].self, from: data)
+                    case .posts:
+                        fetchedData = try decoder.decode([Post].self, from: data)
+                    case .comments:
+                        fetchedData = try decoder.decode([Comment].self, from: data)
+                    }
+
+                    completion(.success(fetchedData))
                 } catch {
                     completion(.failure(.decodingError))
                 }
